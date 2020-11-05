@@ -1,0 +1,419 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title> Add User  | PCF - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <meta name="csrf-token" content="gSt3DdWxKnX4O1TSIh9NXltgjlxU2lMZrh8f1mB0" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- App css -->
+        <link href="css/bootstrap-dark.min.css" id="bootstrap-dark" rel="stylesheet" type="text/css" />
+        <link href="css/bootstrap.min.css" id="bootstrap-light" rel="stylesheet" type="text/css" />
+        <link href="css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/app-rtl.min.css" id="app-rtl" rel="stylesheet" type="text/css" />
+        <link href="css/app-dark.min.css" id="app-dark" rel="stylesheet" type="text/css" />
+        <link href="css/app.min.css" id="app-light" rel="stylesheet" type="text/css" /></head>
+
+<body data-layout="detached" data-topbar="colored">
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+    <div class="container-fluid">
+        <div id="layout-wrapper">
+            <header id="page-topbar">
+    <div class="navbar-header">
+        <div class="container-fluid">
+            <div class="float-right">
+
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-alt fa-1x"></i>
+                        <span class="d-none d-xl-inline-block ml-1">Theodore</span>
+                        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item text-danger" href="logout"><i
+                                class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div>
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <a href="index" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                        <span class="logo-lg">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                    </a>
+
+                    <a href="index" class="logo logo-light">
+                        <span class="logo-sm">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                        <span class="logo-lg">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item toggle-btn waves-effect"
+                        id="vertical-menu-btn">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</header>
+            <!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+
+    <div class="h-100">
+
+        <div class="user-wid text-center py-4">
+            <div class="user-img">
+                <i class="fa fa-user-circle fa-3x"></i>
+            </div>
+
+            <div class="mt-3">
+
+                <a href="#" class="text-dark font-weight-medium font-size-16">Theodore</a>
+                <p class="text-body mt-1 mb-0 font-size-13">Admin</p>
+
+            </div>
+        </div>
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title">Menu</li>
+
+                <li>
+                    <a href="/dashboard" class="waves-effect">
+                        <i class="mdi mdi-airplay"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a href="/add-user" class=" waves-effect">
+                        <i class="mdi mdi-card-plus"></i>
+                        <span>Add New User</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="logout" class=" waves-effect">
+                        <i class="mdi mdi-power"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
+<!-- Left Sidebar End -->
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+                <div class="page-content">
+                    
+    <!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="page-title mb-0 font-size-18">Add User</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                                                                  <li class="breadcrumb-item active">Welcome, Add a new User</li>
+                                     </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Recent Packages</h4>
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="white-box">
+                                <p style="text-align: center; background-color: #E12D4F; color: #fff; padding: 1%; letter-spacing: 5px; font-weight: bold;">SENDER INFORMATION</p>
+                                <hr />
+                                <form class="form-horizontal form-material" method="post" action="/add-courier" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="gSt3DdWxKnX4O1TSIh9NXltgjlxU2lMZrh8f1mB0">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Sender Fullname <small id="ast" style="color: red;">*</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="sender_fullname" placeholder="Johnathan Doe" class="form-control form-control-line" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-email" class="col-md-12">Sender Email <small id="ast" style="color: red;">*</small></label>
+                                        <div class="col-md-12">
+                                            <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="sender_email" id="example-email" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Sender Phone No <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="123 456 7890" name="sender_phone" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Sender Current Address <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Address" name="sender_address" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Sender Country <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Country" name="sender_country" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Sender State <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="State" name="sender_state" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Zip Code <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Zip Code" name="sender_zip_code" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Secret Question <small id="ast" style="color: red;">*</small></label>
+                                        <input type="text" name="secret_question" class="form-control form-control-line" required>
+                                    </div>
+
+                                    <p style="text-align: center; background-color: #E12D4F; color: #fff; padding: 1%; letter-spacing: 5px; font-weight: bold;">RECEIVER INFORMATION</p>
+
+                                    <div class="form-group" style="margin-top: 4%;">
+                                        <label class="col-md-12">Receiver Fullname <small id="ast" style="color: red;">*</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="receiver_fullname" placeholder="Johnathan Doe" class="form-control form-control-line" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-email" class="col-md-12">Receiver Email <small id="ast" style="color: red;">*</small></label>
+                                        <div class="col-md-12">
+                                            <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="receiver_email" id="example-email" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Receiver Phone No <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="123 456 7890" class="form-control form-control-line" name="receiver_phone"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Current Address <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Address" name="receiver_address" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Receiver Country <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Country" name="receiver_country" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Receiver State <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="State" name="receiver_state" class="form-control form-control-line"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Receiver Zip Code <small>(Optional)</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Zip Code" name="receiver_zip_code" class="form-control form-control-line"> </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">Secret Question Answer <small id="ast" style="color: red;">*</small></label>
+                                        <input type="text" name="secret_answer" class="form-control form-control-line" required>
+                                    </div>
+
+                                    <p style="text-align: center; background-color: #E12D4F; color: #fff; padding: 1%; letter-spacing: 5px; font-weight: bold;">PACKAGE INFORMATION</p>
+
+                                    <div class="form-group" STYLE="margin-top: 4%;">
+                                        <label class="col-md-12">Package Description <small id="ast" style="color: red;">*</small></label>
+                                        <div class="col-md-12">
+                                            <textarea rows="5" class="form-control form-control-line" name="package_description"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">Package type <small id="ast" style="color: red;"></small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="package_type" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">Duration <small id="ast" style="color: red;"></small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="duration" class="form-control form-control-line" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Time Initiated <small id="ast" style="color: red;">*</small></label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="time_initiated" class="form-control form-control-line"  required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Package Image <small>(Optional)</small></label>
+                                        <div class="col-sm-12">
+                                            <input type="file" name="image" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" align="center">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-primary" type="submit" name="submit">Create User and Get Tracking Code</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+                </div>
+                <!-- End Page-content -->
+                <footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <script>document.write(new Date().getFullYear())</script> © Qovex.
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-right d-none d-sm-block">
+                    Design & Develop by Themesbrand
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>            </div>
+            <!-- end main content-->
+        </div>
+        <!-- END layout-wrapper -->
+    </div>
+    <!-- END container-fluid -->
+
+
+    <!-- Right Sidebar -->
+    <!-- Right Sidebar -->
+<div class="right-bar">
+    <div data-simplebar class="h-100">
+        <div class="rightbar-title px-3 py-4">
+            <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                <i class="mdi mdi-close noti-icon"></i>
+            </a>
+            <h5 class="m-0">Settings</h5>
+        </div>
+
+        <!-- Settings -->
+        <hr class="mt-0" />
+        <h6 class="text-center mb-0">Choose Layouts</h6>
+
+        <div class="p-4">
+            <div class="mb-2">
+                <img src="images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-3">
+                <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
+                <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
+            </div>
+
+            <div class="mb-2">
+                <img src="images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-3">
+                <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="css/bootstrap-dark.min.css" data-appStyle="css/app-dark.min.css" />
+                <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
+            </div>
+
+            <div class="mb-2">
+                <img src="images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-5">
+                <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="css/app-rtl.min.css" />
+                <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- end slimscroll-menu-->
+</div>
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>    <!-- /Right-bar -->
+
+    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
+        <script src="libs/jquery/jquery.min.js"></script>
+        <script src="libs/bootstrap/bootstrap.min.js"></script>
+        <script src="libs/metismenu/metismenu.min.js"></script>
+        <script src="libs/simplebar/simplebar.min.js"></script>
+        <script src="libs/node-waves/node-waves.min.js"></script>
+
+            <!-- plugin js -->
+    <script src="libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- jquery.vectormap map -->
+    <script src="libs/jquery-vectormap/jquery-vectormap.min.js"></script>
+
+    <!-- Calendar init -->
+    <script src="js/pages/dashboard.init.js"></script>
+
+        <!-- App js -->
+        <script src="js/app.min.js"></script>
+
+        </body>
+
+</html>

@@ -1,0 +1,474 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title> Dashboard  | PCF - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <meta name="csrf-token" content="gSt3DdWxKnX4O1TSIh9NXltgjlxU2lMZrh8f1mB0" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="http://pacificglobalexpress.com/Admin/public/images/favicon.ico">
+    <!-- App css -->
+        <link href="http://pacificglobalexpress.com/Admin/public/css/bootstrap-dark.min.css" id="bootstrap-dark" rel="stylesheet" type="text/css" />
+        <link href="http://pacificglobalexpress.com/Admin/public/css/bootstrap.min.css" id="bootstrap-light" rel="stylesheet" type="text/css" />
+        <link href="http://pacificglobalexpress.com/Admin/public/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="http://pacificglobalexpress.com/Admin/public/css/app-rtl.min.css" id="app-rtl" rel="stylesheet" type="text/css" />
+        <link href="http://pacificglobalexpress.com/Admin/public/css/app-dark.min.css" id="app-dark" rel="stylesheet" type="text/css" />
+        <link href="http://pacificglobalexpress.com/Admin/public/css/app.min.css" id="app-light" rel="stylesheet" type="text/css" /></head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+<body data-layout="detached" data-topbar="colored">
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-chase">
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+                <div class="chase-dot"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Begin page -->
+    <div class="container-fluid">
+        <div id="layout-wrapper">
+            <header id="page-topbar">
+    <div class="navbar-header">
+        <div class="container-fluid">
+            <div class="float-right">
+
+
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-alt fa-1x"></i>
+                        <span class="d-none d-xl-inline-block ml-1">Theodore</span>
+                        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item text-danger" href="logout"><i
+                                class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div>
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <a href="index" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                        <span class="logo-lg">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                    </a>
+
+                    <a href="index" class="logo logo-light">
+                        <span class="logo-sm">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                        <span class="logo-lg">
+                            <h3 class="text-white mt-3">PGE</h3>
+
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 font-size-16 header-item toggle-btn waves-effect"
+                        id="vertical-menu-btn">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</header>
+            <!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+
+    <div class="h-100">
+
+        <div class="user-wid text-center py-4">
+            <div class="user-img">
+                <i class="fa fa-user-circle fa-3x"></i>
+            </div>
+
+            <div class="mt-3">
+
+                <a href="#" class="text-dark font-weight-medium font-size-16">Theodore</a>
+                <p class="text-body mt-1 mb-0 font-size-13">Admin</p>
+
+            </div>
+        </div>
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title">Menu</li>
+
+                <li>
+                    <a href="/dashboard" class="waves-effect">
+                        <i class="mdi mdi-airplay"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a href="/add-user" class=" waves-effect">
+                        <i class="mdi mdi-card-plus"></i>
+                        <span>Add New User</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/logout" class=" waves-effect">
+                        <i class="mdi mdi-power"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
+<!-- Left Sidebar End -->
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+                <div class="page-content">
+                    
+    <!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="page-title mb-0 font-size-18">Dashboard</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                                                                  <li class="breadcrumb-item active">Welcome to PGE Dashboard</li>
+                                     </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Recent Packages</h4>
+                    <div class="row" style="border: 1px solid #e6e6e6">
+                        <div class="col-md-12" style="padding: 1%; background-color: #fff;">
+                            <h5 style="font-weight: 500; ">SHIPPING DETAILS</h5>
+                        </div>
+                        <div class="col-md-12" style="padding: 1%; background-color: #F5F5F5;">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <table class="table" style="font-weight: 500;">
+                                        <tr>
+                                            <td>Package Id</td>
+                                            <td>PID22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status</td>
+                                            <td>Pending</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date Initiated</td>
+                                            <td>nothing</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Package Type</td>
+                                            <td>nothing</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Package Duration</td>
+                                            <td>nothing</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Current Location</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Package Description</td>
+                                            <td>Nothing special</td>
+                                        </tr>
+                                        <tr>
+                                                                                            <td><img src="https://pacificglobalexpress.com/img/packages/november-2020/700076Screenshot (3).png" class="img-fluid"/>
+                                                </td>
+                                                                                    </tr>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="row">
+                                        <div class="col-md-12" style="background-color: #E6E6E6;">
+                                            <h5 style="font-weight: 500;" class="text-center">FROM</h5>
+                                        </div>
+                                        <div class="col-md-12" style="background-color: #FFF; padding: 4%;">
+                                            <p style="font-weight: 500;" class="text-center">h</p>
+                                            <hr style="margin: 0;"/>
+                                            <p style="margin-top: 4%;">
+                                                <b>Sender Phone</b> <br/>
+                                                132383485838 <br/><br/>
+
+                                                <b>Sender Address</b> <br/>
+                                                 <br/><br/>
+
+                                                <b>Sender State</b> <br/>
+                                                 <br/><br/>
+
+                                                <b>Sender Zip Code</b> <br/>
+                                                 <br/><br/>
+
+                                                <b>Sender Country</b> <br/>
+                                                 <br/><br/>
+
+                                                <b>Secret Question</b> <br/>
+                                                What is nothing?<br/><br/>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3" style="margin-left: 3%;">
+                                    <div class="row">
+                                        <div class="col-md-12" style="background-color: #E6E6E6;">
+                                            <h5 style="font-weight: 500;" class="text-center">TO</h5>
+                                        </div>
+                                        <div class="col-md-12" style="background-color: #FFF; padding: 4%;">
+                                            <p style="font-weight: 500;" class="text-center">i</p>
+                                            <hr style="margin: 0;"/>
+                                            <p style="margin-top: 4%;">
+                                                <b>Receiver Phone</b> <br/>
+                                                2342352 <br/><br/>
+
+                                                <b>Receiver Address</b> <br/>
+                                                 <br/><br/>
+
+                                                <b>Receiver State</b> <br/>
+                                                2342352 <br/><br/>
+
+                                                <b>Receiver Zip Code</b> <br/>
+                                                 <br/><br/>
+
+                                                <b>Receiver Country</b> <br/>
+                                                 <br/><br/>
+
+                                                <b>Secret Answer</b> <br/>
+                                                 <br/><br/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" align="center" style="padding: 2%;">
+                        <div class="col-md-12">
+                            <a class="btn btn-primary text-white" data-toggle="modal" data-target="#myModal">Change
+                                Location / Status</a>
+                            &nbsp;&nbsp;
+                            <a href="package/delete/22" class="btn btn-danger">Delete Package</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center" style="font-weight: 500;">Change Status and Current
+                                    Location</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form id="packageForm">
+                                    <div class="form-group">
+                                        <label for="change_status">ChangeStaus</label>
+                                        <select name="status" id="change_status" class="form-control">
+                                            <option value="Pending">Pending</option>
+                                            <option value="Clearing">Clearing</option>
+                                            <option value="Checking">Checking</option>
+                                            <option value="On Hold">On Hold</option>
+                                            <option value="In Transit">In Transit</option>
+                                            <option value="Delivered and Received">Delivered and Received</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Current Location</label>
+                                        <input type="text" value="" name="current_location"
+                                               class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="delivered">Deliverey Status</label>
+                                        <select name="delivery_status" id="delivered" class="form-control">
+                                            <option value="0">
+                                                                                                    Not Delivered
+                                                                                            </option>
+                                            <option value="1">Delivered</option>
+                                            <option value="0">Not Delivered</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" align="center">
+                                        <button type="submit" class="btn btn-primary" onclick="updatePackage()">Update Location and Status <i
+                                                class="mdi mdi-loading mdi-spin" id="spinner" style="display: none;"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                            </div>
+                <!-- End Page-content -->
+                <footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <script>document.write(new Date().getFullYear())</script> © Qovex.
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-right d-none d-sm-block">
+                    Design & Develop by Themesbrand
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>            </div>
+            <!-- end main content-->
+        </div>
+        <!-- END layout-wrapper -->
+    </div>
+    <!-- END container-fluid -->
+
+
+    <!-- Right Sidebar -->
+    <!-- Right Sidebar -->
+<div class="right-bar">
+    <div data-simplebar class="h-100">
+        <div class="rightbar-title px-3 py-4">
+            <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                <i class="mdi mdi-close noti-icon"></i>
+            </a>
+            <h5 class="m-0">Settings</h5>
+        </div>
+
+        <!-- Settings -->
+        <hr class="mt-0" />
+        <h6 class="text-center mb-0">Choose Layouts</h6>
+
+        <div class="p-4">
+            <div class="mb-2">
+                <img src="images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-3">
+                <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
+                <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
+            </div>
+
+            <div class="mb-2">
+                <img src="images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-3">
+                <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="css/bootstrap-dark.min.css" data-appStyle="css/app-dark.min.css" />
+                <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
+            </div>
+
+            <div class="mb-2">
+                <img src="images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+            </div>
+            <div class="custom-control custom-switch mb-5">
+                <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="css/app-rtl.min.css" />
+                <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- end slimscroll-menu-->
+</div>
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>    <!-- /Right-bar -->
+
+    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
+        <script src="http://pacificglobalexpress.com/Admin/public/libs/jquery/jquery.min.js"></script>
+        <script src="http://pacificglobalexpress.com/Admin/public/libs/bootstrap/bootstrap.min.js"></script>
+        <script src="http://pacificglobalexpress.com/Admin/public/libs/metismenu/metismenu.min.js"></script>
+        <script src="http://pacificglobalexpress.com/Admin/public/libs/simplebar/simplebar.min.js"></script>
+        <script src="http://pacificglobalexpress.com/Admin/public/libs/node-waves/node-waves.min.js"></script>
+
+                        <!-- plugin js -->
+                    <script src="http://pacificglobalexpress.com/Admin/public/libs/apexcharts/apexcharts.min.js"></script>
+
+                    <!-- jquery.vectormap map -->
+                    <script src="http://pacificglobalexpress.com/Admin/public/libs/jquery-vectormap/jquery-vectormap.min.js"></script>
+
+                    <!-- Calendar init -->
+                    <script src="http://pacificglobalexpress.com/Admin/public/js/pages/dashboard.init.js"></script>
+
+                <!-- Page Javascript -->
+                    <script>
+                        $("#packageForm").unbind('submit').on('submit', (function(e) {
+                            e.preventDefault();
+                            $.ajax({
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                                type: "POST",
+                                url: "package/edit/22",
+                                data: new FormData(this),
+                                contentType: false,
+                                cache: false,
+                                processData: false,
+                                beforeSend: function () {
+                                    $('#spinner').show();
+                                    $('button').attr('disabled', true);
+                                },
+                                success: function (data) {
+                                    if (data) {
+                                        $('#spinner').hide();
+                                        $('button').removeAttr('disabled');
+                                        location.reload();
+                                    }
+                                }
+                            });
+                        }));
+
+                    </script>
+
+        <!-- App js -->
+        <script src="http://pacificglobalexpress.com/Admin/public/js/app.min.js"></script>
+
+        </body>
+
+</html>
