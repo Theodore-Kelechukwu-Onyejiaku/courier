@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 
 // //Importing routes
 const userRoutes = require("./routers/userRouter")
+const adminRoutes = require("./routers/adminRouter");
 
 
 const bcrypt = require("bcryptjs");
@@ -33,6 +34,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"))
 app.use("/", userRoutes);
+app.use("/api", adminRoutes)
 
 
 

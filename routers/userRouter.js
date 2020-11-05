@@ -49,14 +49,10 @@ userRouter.get("/package-details", userController.packageDetail);
 
 userRouter.post("/signup", userController.singup);
 
-userRouter.get("/api/admin/register", userController.registerAdmin);
 
-userRouter.get("/api/admin/login", userController.get_signin);
 
 userRouter.post("/signin", userController.signin);
 
 userRouter.get("/logout", userController.logout);
-
-userRouter.get("/my_orders", verification.verifyUser, userController.getMyOrders);
 
 module.exports = userRouter;

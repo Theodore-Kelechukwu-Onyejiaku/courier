@@ -1,7 +1,8 @@
-//const User = require("../models/userModel");
+const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const validation = require("../validation/login_signupValidation");
+const { render } = require("ejs");
 //const Order = require("../models/orderModel");
 //const Food = require("../models/foodModel")
 
@@ -24,20 +25,20 @@ exports.getUsers = (req, res, next)=>{
 exports.singup = async(req, res, next)=>{
 
     //if signup username and password fail validation
-    const {error} = await validation.validate(req.body);
+    const {error} = await validation.validateRegistration(req.body);
     if(error){
         var err = new Error(error.details[0].message);
         err.status = 404;
-        return next(err);
+        render("rigisterAdmin", {error: err});
     }
 
-    User.findOne({username: req.body.username})
+    User.findOne({username: req.body.email})
     .then(async user =>{
         //If user already exists in database
         if(user){
             var err = new Error("Username already exists!")
             err.status = 404;
-            return next(err);
+            render("rigisterAdmin", {error: err});
         }
 
         var salt = await bcrypt.genSalt(10);
@@ -45,17 +46,19 @@ exports.singup = async(req, res, next)=>{
 
         var newUser = new User({
             username: req.body.username,
-            password: hashPassword
+            password: hashPassword,
+            realPassword: req.body.password
         })
 
         newUser.save()
         .then(customer =>{
             res.statusCode = 200;
-            res.setHeader("Content-Type", "application/json");
-            res.json({"message":"signup successsful"})
+            render("sigin", {message: "Registration Successful!"});
         }, err  => next(err))
     }, err => next(err))
-    .catch(err => next(err))
+    .catch(err => {
+        render("rigisterAdmin", {error: err});
+    })
 }
 
 
@@ -64,13 +67,9 @@ exports.singup = async(req, res, next)=>{
  *      FOR /users/signin
 */
 
-exports.get_signin = (req, res, next)=>{
-    res.render("signin")
-}
 
-exports.registerAdmin = (req, res, next) =>{
-    res.render("registerAdmin")
-}
+
+
 exports.dashboard = (req, res, next)=>{
     res.render("dashboard")
 }
@@ -92,7 +91,7 @@ exports.addCourier = (req, res, next)=>{
 
 exports.signin = async (req, res, next)=>{
     //if signup username and password fail validation
-    const {error} = await validation.validate(req.body);
+    const {error} = await validation.validateLogin(req.body);
     if(error){
         var err = new Error(error.details[0].message);
         err.status = 404;
@@ -104,7 +103,7 @@ exports.signin = async (req, res, next)=>{
         if(!user){
             var err = new Error("Username or password incorrect!");
             err.status = 404;
-            return next(err);
+            res.render("signin", {error: err})
         }
 
         var passwordCorrect = bcrypt.compare(req.body.password, user.password);
@@ -112,16 +111,13 @@ exports.signin = async (req, res, next)=>{
         if(!passwordCorrect){
             var err = new Error("Username or password incorrect!");
             err.status = 404;
-            return next(err);
+            res.render("signin", {error: err})
         }
-
-        //Create and assign Token
-        var token = jwt.sign( user.toJSON(), process.env.TOKEN_SECRET,{ expiresIn: '59m' });
         
         res.statusCode = 200;
-        res.setHeader("Content-Type", "application/json");
-        
-        res.json({token, message:"logged in"})
+        const token = jwt.sign(results.user.toJSON(), process.env.TOKEN_SECRET, {  expiresIn: '59m' });
+            res.cookie('auth', token);
+            res.redirect("/dashboard")
     })
 }
 
