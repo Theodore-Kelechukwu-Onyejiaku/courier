@@ -225,3 +225,20 @@ exports.logout = (req, res, next)=>{
     res.render("signin", {message: "Logout Successful!!!"})
 }
 
+
+exports.tracker = async (req, res, next) =>{
+    console.log(req.query)
+    try{
+        Courier.findById(req.query.id, (err, package)=>{
+            if(err){
+                var package = null;
+                res.render("delivered", {err: err, package: package})
+            }
+            res.render("delivered", {package: package})
+        })
+    }
+    catch(error){
+        next(error)
+    }
+    
+}

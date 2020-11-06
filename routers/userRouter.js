@@ -48,6 +48,9 @@ userRouter.post("/updatePackage/:id", verification.verifyUser, userController.up
 userRouter.get("/package-details/:id", verification.verifyUser, userController.packageDetail);
 userRouter.get("/package/:id/delete", verification.verifyUser, userController.deletePackage)
 
+
+userRouter.get("/track", userController.tracker)
+
 userRouter.get("/logout", userController.logout);
 
 module.exports = userRouter;

@@ -30,5 +30,5 @@ exports.verifyAdmin = (req, res, next)=>{
     }
     var err = new Error("You are not authorized!");
     err.status = 403;
-    render("signin", {error: err});
+    res.render("signin", {error: err});
 }

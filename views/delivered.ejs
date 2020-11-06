@@ -1,0 +1,959 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>NAME OF BUSINESS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="../ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300i,400,400i,500,700,900" />
+    
+    <style>
+        b {
+            color: #000;
+        }
+        /*font Variables*/
+        /*Color Variables*/
+        @import url("https://fonts.googleapis.com/css?family=Roboto:300i,400,400i,500,700,900");
+        .multi_step_form {
+          background: #f6f9fb;
+          display: block;
+          overflow: hidden;
+        }
+        .multi_step_form #msform {
+          text-align: center;
+          position: relative;
+          padding-top: 2%;
+          min-height: 100%;
+          padding-bottom: 2%;
+          max-width: 100%;
+          margin: 0 auto;
+          background: #ffffff;
+          z-index: 1;
+        }
+        .multi_step_form #msform .tittle {
+          text-align: center;
+          padding-bottom: 55px;
+        }
+        .multi_step_form #msform .tittle h2 {
+          font: 500 24px/35px "Roboto", sans-serif;
+          color: #3f4553;
+          padding-bottom: 5px;
+        }
+        .multi_step_form #msform .tittle p {
+          font: 400 16px/28px "Roboto", sans-serif;
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset {
+          border: 0;
+          padding: 20px 105px 0;
+          position: relative;
+          width: 100%;
+          left: 0;
+          right: 0;
+        }
+        .multi_step_form #msform fieldset:not(:first-of-type) {
+          display: none;
+        }
+        .multi_step_form #msform fieldset h3 {
+          font: 500 18px/35px "Roboto", sans-serif;
+          color: #3f4553;
+        }
+        .multi_step_form #msform fieldset h6 {
+          font: 400 15px/28px "Roboto", sans-serif;
+          color: #5f6771;
+          padding-bottom: 30px;
+        }
+        .multi_step_form #msform fieldset .intl-tel-input {
+          display: block;
+          background: transparent;
+          border: 0;
+          box-shadow: none;
+          outline: none;
+        }
+        .multi_step_form #msform fieldset .intl-tel-input .flag-container .selected-flag {
+          padding: 0 20px;
+          background: transparent;
+          border: 0;
+          box-shadow: none;
+          outline: none;
+          width: 65px;
+        }
+        .multi_step_form #msform fieldset .intl-tel-input .flag-container .selected-flag .iti-arrow {
+          border: 0;
+        }
+        .multi_step_form #msform fieldset .intl-tel-input .flag-container .selected-flag .iti-arrow:after {
+          content: "\f35f";
+          position: absolute;
+          top: 0;
+          right: 0;
+          font: normal normal normal 24px/7px Ionicons;
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset #phone {
+          padding-left: 80px;
+        }
+        .multi_step_form #msform fieldset .form-group {
+          padding: 0 10px;
+        }
+        .multi_step_form #msform fieldset .fg_2,
+        .multi_step_form #msform fieldset .fg_3 {
+          padding-top: 10px;
+          display: block;
+          overflow: hidden;
+        }
+        .multi_step_form #msform fieldset .fg_3 {
+          padding-bottom: 70px;
+        }
+        .multi_step_form #msform fieldset .form-control,
+        .multi_step_form #msform fieldset .product_select {
+          border-radius: 3px;
+          border: 1px solid #d8e1e7;
+          padding: 0 20px;
+          height: auto;
+          font: 400 15px/48px "Roboto", sans-serif;
+          color: #5f6771;
+          box-shadow: none;
+          outline: none;
+          width: 100%;
+        }
+        .multi_step_form #msform fieldset .form-control.placeholder,
+        .multi_step_form #msform fieldset .product_select.placeholder {
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset .form-control:-moz-placeholder,
+        .multi_step_form #msform fieldset .product_select:-moz-placeholder {
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset .form-control::-moz-placeholder,
+        .multi_step_form #msform fieldset .product_select::-moz-placeholder {
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset .form-control::-webkit-input-placeholder,
+        .multi_step_form #msform fieldset .product_select::-webkit-input-placeholder {
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset .form-control:hover, .multi_step_form #msform fieldset .form-control:focus,
+        .multi_step_form #msform fieldset .product_select:hover,
+        .multi_step_form #msform fieldset .product_select:focus {
+          border-color: #5cb85c;
+        }
+        .multi_step_form #msform fieldset .form-control:focus.placeholder,
+        .multi_step_form #msform fieldset .product_select:focus.placeholder {
+          color: transparent;
+        }
+        .multi_step_form #msform fieldset .form-control:focus:-moz-placeholder,
+        .multi_step_form #msform fieldset .product_select:focus:-moz-placeholder {
+          color: transparent;
+        }
+        .multi_step_form #msform fieldset .form-control:focus::-moz-placeholder,
+        .multi_step_form #msform fieldset .product_select:focus::-moz-placeholder {
+          color: transparent;
+        }
+        .multi_step_form #msform fieldset .form-control:focus::-webkit-input-placeholder,
+        .multi_step_form #msform fieldset .product_select:focus::-webkit-input-placeholder {
+          color: transparent;
+        }
+        .multi_step_form #msform fieldset .product_select:after {
+          display: none;
+        }
+        .multi_step_form #msform fieldset .product_select:before {
+          content: "\f35f";
+          position: absolute;
+          top: 0;
+          right: 20px;
+          font: normal normal normal 24px/48px Ionicons;
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset .product_select .list {
+          width: 100%;
+        }
+        .multi_step_form #msform fieldset .done_text {
+          padding-top: 40px;
+        }
+        .multi_step_form #msform fieldset .done_text .don_icon {
+          height: 36px;
+          width: 36px;
+          line-height: 36px;
+          font-size: 22px;
+          margin-bottom: 10px;
+          background: #5cb85c;
+          display: inline-block;
+          border-radius: 50%;
+          color: #ffffff;
+          text-align: center;
+        }
+        .multi_step_form #msform fieldset .done_text h6 {
+          line-height: 23px;
+        }
+        .multi_step_form #msform fieldset .code_group {
+          margin-bottom: 60px;
+        }
+        .multi_step_form #msform fieldset .code_group .form-control {
+          border: 0;
+          border-bottom: 1px solid #a1a7ac;
+          border-radius: 0;
+          display: inline-block;
+          width: 30px;
+          font-size: 30px;
+          color: #5f6771;
+          padding: 0;
+          margin-right: 7px;
+          text-align: center;
+          line-height: 1;
+        }
+        .multi_step_form #msform fieldset .passport {
+          margin-top: -10px;
+          padding-bottom: 30px;
+          position: relative;
+        }
+        .multi_step_form #msform fieldset .passport .don_icon {
+          height: 36px;
+          width: 36px;
+          line-height: 36px;
+          font-size: 22px;
+          position: absolute;
+          top: 4px;
+          right: 0;
+          background: #5cb85c;
+          display: inline-block;
+          border-radius: 50%;
+          color: #ffffff;
+          text-align: center;
+        }
+        .multi_step_form #msform fieldset .passport h4 {
+          font: 500 15px/23px "Roboto", sans-serif;
+          color: #5f6771;
+          padding: 0;
+        }
+        .multi_step_form #msform fieldset .input-group {
+          padding-bottom: 40px;
+        }
+        .multi_step_form #msform fieldset .input-group .custom-file {
+          width: 100%;
+          height: auto;
+        }
+        .multi_step_form #msform fieldset .input-group .custom-file .custom-file-label {
+          width: 168px;
+          border-radius: 5px;
+          cursor: pointer;
+          font: 700 14px/40px "Roboto", sans-serif;
+          border: 1px solid #99a2a8;
+          text-align: center;
+          transition: all 300ms linear 0s;
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset .input-group .custom-file .custom-file-label i {
+          font-size: 20px;
+          padding-right: 10px;
+        }
+        .multi_step_form #msform fieldset .input-group .custom-file .custom-file-label:hover, .multi_step_form #msform fieldset .input-group .custom-file .custom-file-label:focus {
+          background: #5cb85c;
+          border-color: #5cb85c;
+          color: #fff;
+        }
+        .multi_step_form #msform fieldset .input-group .custom-file input {
+          display: none;
+        }
+        .multi_step_form #msform fieldset .file_added {
+          text-align: left;
+          padding-left: 190px;
+          padding-bottom: 60px;
+        }
+        .multi_step_form #msform fieldset .file_added li {
+          font: 400 15px/28px "Roboto", sans-serif;
+          color: #5f6771;
+        }
+        .multi_step_form #msform fieldset .file_added li a {
+          color: #5cb85c;
+          font-weight: 500;
+          display: inline-block;
+          position: relative;
+          padding-left: 15px;
+        }
+        .multi_step_form #msform fieldset .file_added li a i {
+          font-size: 22px;
+          padding-right: 8px;
+          position: absolute;
+          left: 0;
+          transform: rotate(20deg);
+        }
+        .multi_step_form #msform #progressbar {
+          margin-bottom: 30px;
+          overflow: hidden;
+        }
+        .multi_step_form #msform #progressbar li {
+          list-style-type: none;
+          color: #99a2a8;
+          font-size: 9px;
+          width: calc(100% / 3);
+          float: left;
+          position: relative;
+          font: 500 13px/1 "Roboto", sans-serif;
+        }
+        .multi_step_form #msform #progressbar li:nth-child(2):before {
+          content: "√";
+        }
+        .multi_step_form #msform #progressbar li:nth-child(3):before {
+          content: "√";
+        }
+        .multi_step_form #msform #progressbar li:before {
+          content: "√";
+          font: normal normal normal 30px/50px Ionicons;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          display: block;
+          background: #eaf0f4;
+          border-radius: 50%;
+          font-weight: bold;
+          margin: 0 auto 10px auto;
+        }
+        .multi_step_form #msform #progressbar li:after {
+          content: "";
+          width: 100%;
+          height: 10px;
+          background: #eaf0f4;
+          position: absolute;
+          left: -50%;
+          top: 21px;
+          z-index: -1;
+        }
+        .multi_step_form #msform #progressbar li:last-child:after {
+          width: 150%;
+        }
+        .multi_step_form #msform #progressbar li.active {
+          color: #5cb85c;
+        }
+        .multi_step_form #msform #progressbar li.active:before, .multi_step_form #msform #progressbar li.active:after {
+          background: #5cb85c;
+          color: white;
+        }
+        .multi_step_form #msform .action-button {
+          background: #5cb85c;
+          color: white;
+          border: 0 none;
+          border-radius: 5px;
+          cursor: pointer;
+          min-width: 130px;
+          font: 700 14px/40px "Roboto", sans-serif;
+          border: 1px solid #5cb85c;
+          margin: 0 5px;
+          text-transform: uppercase;
+          display: inline-block;
+        }
+        .multi_step_form #msform .action-button:hover, .multi_step_form #msform .action-button:focus {
+          background: #405867;
+          border-color: #405867;
+        }
+        .multi_step_form #msform .previous_button {
+          background: transparent;
+          color: #99a2a8;
+          border-color: #99a2a8;
+        }
+        .multi_step_form #msform .previous_button:hover, .multi_step_form #msform .previous_button:focus {
+          background: #405867;
+          border-color: #405867;
+          color: #fff;
+        }
+        
+        .multi_step_form #msform #progressbar li.hold {
+          color: red;
+        }
+        .multi_step_form #msform #progressbar li.hold:before, .multi_step_form #msform #progressbar li.hold:after {
+          background: red;
+          color: white;
+        }
+        
+        .multi_step_form #msform #progressbar li.transit {
+          color: #31B6F7;
+        }
+        
+        .multi_step_form #msform #progressbar li.transit:before, .multi_step_form #msform #progressbar li.transit:after {
+          background: #31B6F7;
+          color: white;
+        }
+        
+        .multi_step_form #msform #progressbar li.checking {
+          color: #F8BC19;
+        }
+        
+        .multi_step_form #msform #progressbar li.checking:before, .multi_step_form #msform #progressbar li.checking:after {
+          background: #F8BC19;
+          color: white;
+        }
+        
+        .multi_step_form #msform #progressbar li.clearing {
+          color: #000;
+        }
+        
+        .multi_step_form #msform #progressbar li.clearing:before, .multi_step_form #msform #progressbar li.clearing:after {
+          background: #000;
+          color: white;
+        }
+        
+        .multi_step_form #msform #progressbar li.pending {
+          color: orange;
+        }
+        
+        .multi_step_form #msform #progressbar li.pending:before, .multi_step_form #msform #progressbar li.pending:after {
+          background: orange;
+          color: white;
+        }
+
+    </style>
+    
+         <script>
+        function formatDate(date) {
+          var hours = date.getHours();
+          var minutes = date.getMinutes();
+          var ampm = hours >= 12 ? 'pm' : 'am';
+          hours = hours % 12;
+          hours = hours ? hours : 12; // the hour '0' should be '12'
+          minutes = minutes < 10 ? '0'+minutes : minutes;
+          var strTime = hours + ':' + minutes + ' ' + ampm;
+          return (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+        }
+        
+        var d = new Date();
+        var e = formatDate(d);
+    </script>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- header-start -->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ef1c7d44a7c6258179b2a53/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<header>
+    <div class="header-area ">
+        <div class="header-top_area d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="logo">
+                            <a href="index.html">
+                                <h3>NAME OF BUSINESS</h3>
+                                <!-- <img src="img/logo.png" alt=""> -->
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-md-8">
+                        <div class="header_right d-flex align-items-center">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>  customercare@nameofbusiness.com</a></li>
+                                    <li><a href="#"> <i class="fa fa-phone"></i> +17814863623</a></li>
+                                </ul>
+                            </div>
+                            <!--
+                            <div class="book_btn d-none d-lg-block">
+                                <a class="boxed-btn3-line" href="admin">Login</a>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sticky-header" class="main-header-area">
+            <div class="container">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-12 d-block d-lg-none">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <h3>NAME OF BUSINESS</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a  href="index.html">home</a></li>
+                                        <li><a  href="service.html">Services</a></li>
+                                        <li><a href="about.html">about</a></li>
+                                        <!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="service_details.html">service details</a></li>
+                                                <li><a href="elements.html">elements</a></li>
+                                            </ul>
+                                        </li> -->
+                                        <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">blog</a></li>
+                                                <li><a href="single-blog.html">single-blog</a></li>
+                                            </ul>
+                                        </li> -->
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <!-- <div class="Appointment justify-content-end">
+                                <div class="search_btn">
+                                    <a data-toggle="modal" data-target="#exampleModalCenter" href="#">
+                                        <i class="ti-search"></i>
+                                    </a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header><!-- header-end -->
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Tracking Information</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+<% if(package){ %>
+    <!-- service_area  -->
+<div class="service_area">
+  <div class="container">
+                      <div class="row">
+                  <div class="col-lg-12">
+                      <section class="multi_step_form">  
+                        <form id="msform"> 
+                          <!-- Tittle -->
+                          <div class="row p-3">
+                                  <div class="col-lg-12">
+                                      <h3 class="text-center pl-3 pr-3"><span style="color: #5cb85c;">Tracking Number: </span><%= package._id %></h3>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <h4 class="text-center"><span style="color: #17A2B8;">Current Location</span>: <%= package.current_location %></h4>
+                                  </div>
+                                  <div class="col-lg-12">
+                                      <p style="font-weight: bold;"><small>Time: <span><script>document.write(e);</script></span></small></p>
+                                  </div>
+                              </div>
+                          <!-- progressbar -->
+                          <ul id="progressbar" style="margin-top: 4%;">
+                            <li><h4>Package Picked Up</h4></li>
+                            <% if(package.package_status == "Delivered and Recieved"){ %>
+                              <li class="active">
+                                <h4><%= package.package_status %></h4>
+                              </li> 
+                            <% }else{ %>
+                              <li class="checking">
+                                <h4><%= package.package_status %></h4>
+                              </li> 
+                            <% } %>
+                            
+                            <% if(package.delivery_status ==  "Delivered"){ %>
+                              <li class="active" ><h4><%= package.delivery_status %></h4></li>
+                            <% }else{ %>
+                            <li  ><h4><%= package.delivery_status %></h4></li>
+                            <% } %>
+                          </ul>
+                          <!-- fieldsets -->
+                      
+                      
+                        </form>  
+                      </section> 
+                      
+                      <div class="row p-3" style="background-color: #F9F4F2">
+                          <div class="col-lg-9">
+                              <h4 class="text-left pl-3"><span style="color: #5cb85c;">Product & Tracking Information</span></h4>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                      <p style="margin-top: 2%;" align="center">
+          <a href="index-2.html" class="btn btn-outline-primary">Go Back</a>&nbsp;&nbsp;
+          <a href="#" data-toggle="modal" data-target="#packageDescription" class="btn btn-info">View Package Description</a>
+      </p>
+  </div>
+</div>
+<!--/ service_area  -->
+
+<% }else{ %>
+  <h1 class="text-danger" style="text-align:center">No Package Associated with the Track ID</h1>
+<% } %>
+
+<!-- contact_location  -->
+<div class="contact_location">
+    <div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="location_left">
+                <div class="logo">
+                    <a href="index-2.html">
+                        <h3>NAME OF BUSINESS</h3>
+                    </a>
+                </div>
+                <!-- <ul>
+                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                    <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
+                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                    <li><a href="#"> <i class="fa fa-youtube"></i> </a></li>
+                </ul> -->
+            </div>
+        </div>
+        <!-- <div class="col-xl-3 col-md-3">
+            <div class="single_location">
+                <h3> <img src="img/icon/address.svg" alt=""> Location</h3>
+                <p>600/D, Kings road, Green lane
+                    NewYork-2563</p>
+            </div>
+        </div> -->
+        <div class="col-xl-3 col-md-3">
+            <div class="single_location">
+                <h3> <img src="img/icon/support.svg" alt=""> Location</h3>
+                <p>+17814863623 <br>
+                    customercare@nameofbusiness.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights Reserved</p>
+</div></div>
+
+<!--/ contact_location  -->
+
+
+<!-- Modal -->
+<div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="serch_form">
+                <input type="text" placeholder="search">
+                <button type="submit">search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% if(package){ %>
+<!-- Modal -->
+<div class="modal fade custom_search_pop" id="packageDescription" tabindex="-1" role="dialog"
+    style="margin-top" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4" style="width: 150%">
+            <div class="row" style="border: 1px solid #e6e6e6;">
+                    <div class="col-md-12" style="padding: 1%; background-color: #E6E6E6;">
+                        <h5 style="font-weight: 500; ">SHIPPING DETAILS</h5>
+                        <span class="pull-right"><a href="#" data-dismiss="modal">Close &times;</a></span>
+                    </div>
+                    <div class="col-md-12" style="padding: 1%; background-color: #F5F5F5;">
+                      <div class="row">
+                          <div class="col-md-5">
+                              <table class="table" style="font-weight: 500;">
+                                  <tr>
+                                      <td>Status</td>
+                                      <td>Pending</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Date Initiated</td>
+                                      <td><%= package.time_initiated %></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Package Type</td>
+                                      <td><%= package.package_type %></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Package Duration</td>
+                                      <td><%= package.duration %></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Current Location</td>
+                                      <td><%= package.current_location %></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Package Description</td>
+                                      <td><%= package.package_description %></td>
+                                  </tr>
+                                  <tr>
+                                      <td><img src="<%= package.image %>" class="img-fluid"/>
+                                  </td>
+                                                                              </tr>
+                              </table>
+                          </div>
+
+                          <div class="col-md-3">
+                              <div class="row">
+                                  <div class="col-md-12" style="background-color: #E6E6E6;">
+                                      <h5 style="font-weight: 500;" class="text-center">FROM</h5>
+                                  </div>
+                                  <div class="col-md-12" style="background-color: #FFF; padding: 4%;">
+                                      <p style="font-weight: 500;" class="text-center"><%= package.sender_fullname %></p>
+                                      <hr style="margin: 0;"/>
+                                      <p style="margin-top: 4%;">
+                                          <b>Sender Phone</b> <br/>
+                                          <%= package.sender_phone %><br/><br/>
+
+                                          <b>Sender Address</b> <br/>
+                                          <%= package.sender_address %><br/><br/>
+
+                                          <b>Sender State</b> <br/>
+                                          <%= package.sender_state %><br/><br/>
+
+                                          <b>Sender Zip Code</b> <br/>
+                                          <%= package.sender_zip_code %><br/><br/>
+
+                                          <b>Sender Country</b> <br/>
+                                          <%= package.sender_country %><br/><br/>
+
+                                          <b>Secret Question</b> <br/>
+                                          <%= package.secret_question %><br/><br/>
+                                      </p>
+
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-3" style="margin-left: 3%;">
+                              <div class="row">
+                                  <div class="col-md-12" style="background-color: #E6E6E6;">
+                                      <h5 style="font-weight: 500;" class="text-center">TO</h5>
+                                  </div>
+                                  <div class="col-md-12" style="background-color: #FFF; padding: 4%;">
+                                      <p style="font-weight: 500;" class="text-center"><%= package.receiver_fullname %></p>
+                                      <hr style="margin: 0;"/>
+                                      <p style="margin-top: 4%;">
+                                          <b>Receiver Phone</b> <br/>
+                                          <%= package.receiver_phone %><br/><br/>
+
+                                          <b>Receiver Address</b> <br/>
+                                          <%= package.receiver_address %><br/><br/>
+
+                                          <b>Receiver State</b> <br/>
+                                          <%= package.receiver_state %><br/><br/>
+
+                                          <b>Receiver Zip Code</b> <br/>
+                                          <%= package.receiver_zip_code %><br/><br/>
+
+                                          <b>Receiver Country</b> <br/>
+                                          <%= package.receiver_country %><br/><br/>
+
+                                          <b>Secret Answer</b> <br/>
+                                          <%= package.secret_answer %><br/><br/>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<% } %>
+<!-- JS here -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/scrollIt.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/nice-select.min.js"></script>
+<script src="js/jquery.slicknav.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/plugins.js"></script>
+<!-- <script src="js/gijgo.min.js"></script> -->
+<script src="js/slick.min.js"></script>
+
+
+<!--contact js-->
+<script src="js/contact.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/mail-script.js"></script>
+
+
+<script src="js/main.js"></script>
+<script>
+    ;(function($) {
+    "use strict";  
+    
+    //* Form js
+    function verificationForm(){
+        //jQuery time
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var left, opacity, scale; //fieldset properties which we will animate
+        var animating; //flag to prevent quick multi-click glitches
+
+        $(".next").click(function () {
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            next_fs = $(this).parent().next();
+
+            //activate next step on progressbar using the index of next_fs
+            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+            //show the next fieldset
+            next_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({
+                opacity: 0
+            }, {
+                step: function (now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale current_fs down to 80%
+                    scale = 1 - (1 - now) * 0.2;
+                    //2. bring next_fs from the right(50%)
+                    left = (now * 50) + "%";
+                    //3. increase opacity of next_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'position': 'absolute'
+                    });
+                    next_fs.css({
+                        'left': left,
+                        'opacity': opacity
+                    });
+                },
+                duration: 800,
+                complete: function () {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+        });
+
+        $(".previous").click(function () {
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            previous_fs = $(this).parent().prev();
+
+            //de-activate current step on progressbar
+            $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+            //show the previous fieldset
+            previous_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({
+                opacity: 0
+            }, {
+                step: function (now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale previous_fs from 80% to 100%
+                    scale = 0.8 + (1 - now) * 0.2;
+                    //2. take current_fs to the right(50%) - from 0%
+                    left = ((1 - now) * 50) + "%";
+                    //3. increase opacity of previous_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'left': left
+                    });
+                    previous_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'opacity': opacity
+                    });
+                },
+                duration: 800,
+                complete: function () {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+        });
+
+        $(".submit").click(function () {
+            return false;
+        })
+    }; 
+    
+    //* Add Phone no select
+    function phoneNoselect(){
+        if ( $('#msform').length ){   
+            $("#phone").intlTelInput(); 
+            $("#phone").intlTelInput("setNumber", "+880"); 
+        };
+    }; 
+    //* Select js
+    function nice_Select(){
+        if ( $('.product_select').length ){ 
+            $('select').niceSelect();
+        };
+    }; 
+    /*Function Calls*/  
+    verificationForm ();
+    phoneNoselect ();
+    nice_Select ();
+})(jQuery); 
+</script>
+
+
+</body>
+
+
+
+</html>
