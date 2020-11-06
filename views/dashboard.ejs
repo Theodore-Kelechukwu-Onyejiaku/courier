@@ -20,16 +20,37 @@
                             </tr>
                             </thead>
                             <tbody>
-                                                                    <tr>
-                                        <td>22</td>
-                                        <td>
-                                            <a href="#" class="text-body font-weight-medium">4yBkOG4TmnZH1kE</a>
-                                        </td>
-                                        <td>nothing</td>
-                                        <td> <small><i class="fa fa-circle"></i></small> Pending</td>
-                                        <td><a href="package-details?id=22" class="btn btn-primary btn-sm">See More</a></td>
-                                    </tr>
-                                                            </tbody>
+                                    
+                                    <% if(package.length > 0){ %>
+                                        <% package.forEach((each, index, arr) =>{ %>
+                                            <tr>
+                                                <td><%= index +1 %></td>
+                                                <td>
+                                                    <a href="/package-details/<%= each._id %>" class="text-body font-weight-medium"><%= each._id %></a>
+                                                </td>
+                                                <td><%= each.package_type %></td>
+                                                <% if(each.package_status  == "Pending"){ %>
+                                                    <td> <small><i class="fa fa-circle text-warning"></i></small><%= each.package_status %></td>
+                                                <% } else if(each.package_status  == "Clearing"){ %>
+                                                    <td> <small><i class="fa fa-circle text-info"></i></small><%= each.package_status %></td>
+                                                <% }else if(each.package_status  == "Checking" ){ %>
+                                                    <td> <small><i class="fa fa-circle text-info"></i></small><%= each.package_status %></td>
+                                                <% }else if(each.package_status  == "On Hold" ){ %>
+                                                    <td> <small><i class="fa fa-circle text-secondary"></i></small><%= each.package_status %></td>
+                                                <% }else if(each.package_status  == "In Transit" ){ %>
+                                                    <td> <small><i class="fa fa-circle text-primary"></i></small><%= each.package_status %></td>
+                                                <% }else{ %>
+                                                    <td> <small><i class="fa fa-circle text-success"></i></small><%= each.package_status %></td>
+                                                <% } %>
+                                                
+                                                <td><a href="/package-details/<%= each._id %>" class="btn btn-primary btn-sm">See More</a></td>
+                                            </tr>
+                                        <% }) %>
+                                   <% } else{ %>
+                                        
+                                   <% }%>
+                                    
+                            </tbody>
                         </table>
                     </div>
 

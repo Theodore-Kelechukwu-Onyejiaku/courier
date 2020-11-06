@@ -37,21 +37,16 @@ function checkFileType(file, cb){
 
 userRouter.get("/",verification.verifyUser, verification.verifyAdmin, userController.getUsers);
 
-userRouter.get("/dashboard", userController.dashboard);
+userRouter.get("/dashboard", verification.verifyUser, userController.dashboard);
 
-userRouter.get("/add-user", userController.get_addCourier);
+userRouter.get("/add-user", verification.verifyUser, userController.get_addCourier);
 
-userRouter.post("/add-courier",upload.single("image"), userController.addCourier);
+userRouter.post("/add-courier",upload.single("image"),verification.verifyUser, userController.addCourier);
 
+userRouter.post("/updatePackage/:id", verification.verifyUser, userController.updatePackage);
 
-
-userRouter.get("/package-details", userController.packageDetail);
-
-userRouter.post("/signup", userController.singup);
-
-
-
-userRouter.post("/signin", userController.signin);
+userRouter.get("/package-details/:id", verification.verifyUser, userController.packageDetail);
+userRouter.get("/package/:id/delete", verification.verifyUser, userController.deletePackage)
 
 userRouter.get("/logout", userController.logout);
 

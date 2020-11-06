@@ -39,8 +39,8 @@
                         <div class="bg-login text-center">
                             <div class="bg-login-overlay"></div>
                             <div class="position-relative">
-                                <h5 class="text-white font-size-20">Free Register</h5>
-                                <p class="text-white mb-0">Get your free Qovex account now</p>
+                                <h5 class="text-white font-size-20">Admin Register</h5>
+                                <p class="text-white mb-0">Create a new admin</p>
                                 <!-- <a href="index" class="logo logo-admin mt-4">
                                     <img src="/images/logo-sm-dark.png" alt="" height="30">
                                 </a> -->
@@ -50,25 +50,27 @@
                         <div class="card-body pt-5">
 
                             <div class="p-2">
-                                <form method="POST" action="/register">
-                                    <input type="hidden" name="_token" value="l278I4EM5k5ubUt9iwyfK0TYcXJKzLxNvamTfWR7">                                    <div class="form-group">
+                                <form method="POST" action="/api/admin/register" id="myForm">
+                                    
+                                    <div class="form-group">
                                         <label for="useremail">E-Mail Address</label>
-                                        <input type="email" name="email" class="form-control " name="email" value="" id="useremail" placeholder="Enter email" autocomplete="email">
+                                        <input type="email" name="email" class="form-control " name="email" value="" id="useremail" placeholder="Enter email, 6 characters long" autocomplete="email">
                                                                             </div>
 
                                     <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" name="name" value="" required autocomplete="name" class="form-control " autofocus id="name" placeholder="Enter name">
+                                        <input type="text" name="name" value="" required autocomplete="name" class="form-control " autofocus id="name" placeholder="Enter name, 6 characters long">
                                                                             </div>
 
                                     <div class="form-group">
                                         <label for="userpassword">Password</label>
-                                        <input type="password" class="form-control " name="password" required autocomplete="new-password" id="userpassword" placeholder="Enter password">
+                                        <input type="password" class="form-control " name="password" required autocomplete="new-password" id="userpassword" placeholder="Enter password, 6 characters long">
                                                                             </div>
 
                                     <div class="form-group">
                                         <label for="userpassword">Confirm Password</label>
                                         <input type="password" name="password_confirmation" class="form-control" id="userconfirmpassword" placeholder="Confirm password">
+                                        <span  class="text-danger" style="display: none;" id="passwordError">Passwords do not match!</span>
                                     </div>
 
                                     <div class="mt-4">
@@ -80,7 +82,33 @@
                                     </div>
                                 </form>
                             </div>
+                            <script>
+                                var email = document.getElementById("myForm");
+                                var password = document.getElementById("userpassword");
+                                var confirmPassword = document.getElementById("userconfirmpassword");
+                                var passwordError = document.getElementById("passwordError");
 
+                                email.addEventListener("submit", (e)=>{
+                                    
+                                    if(password.value !== confirmPassword.value){
+                                        passwordError.style.display = "block"
+                                        e.preventDefault();
+                                    }
+                                })
+
+                                password.addEventListener("keypress", ()=>{
+                                    passwordError.style.display = "none"
+
+                                })
+
+                                confirmPassword.addEventListener("keypress", ()=>{
+                                    passwordError.style.display = "none"
+
+                                })
+
+                                
+
+                            </script>
                         </div>
                     </div>
                     <div class="mt-5 text-center">

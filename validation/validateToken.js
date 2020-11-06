@@ -6,18 +6,20 @@ exports.verifyUser = (req, res, next)=>{
     if(token){
         jwt.verify(token, process.env.TOKEN_SECRET, (err, token_data)=>{
             if(err){
-                err = "You are not authenticated"
+                err = "You are not authenticated. Please log in!"
                 err.status = 403;
                 res.render("signin", {error: err})
+                return;
             }else{
                 req.user = token_data
                 next();
             }
         })
     }else{
-        var err = new Error("You are not authenticated");
+        var err = new Error("Please login in!!!");
         err.status = 403;
         res.render("signin", {error: err})
+        return;
     }
     
 }

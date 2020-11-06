@@ -1,8 +1,11 @@
 const User = require("../models/userModel");
+const Courier = require("../models/courierModel")
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const validation = require("../validation/login_signupValidation");
 const { render } = require("ejs");
+const async = require("async")
+
 //const Order = require("../models/orderModel");
 //const Food = require("../models/foodModel")
 
@@ -22,44 +25,7 @@ exports.getUsers = (req, res, next)=>{
 /**
  *      FOR /users/signup
  */
-exports.singup = async(req, res, next)=>{
 
-    //if signup username and password fail validation
-    const {error} = await validation.validateRegistration(req.body);
-    if(error){
-        var err = new Error(error.details[0].message);
-        err.status = 404;
-        render("rigisterAdmin", {error: err});
-    }
-
-    User.findOne({username: req.body.email})
-    .then(async user =>{
-        //If user already exists in database
-        if(user){
-            var err = new Error("Username already exists!")
-            err.status = 404;
-            render("rigisterAdmin", {error: err});
-        }
-
-        var salt = await bcrypt.genSalt(10);
-        const hashPassword = await bcrypt.hash(req.body.password, salt);
-
-        var newUser = new User({
-            username: req.body.username,
-            password: hashPassword,
-            realPassword: req.body.password
-        })
-
-        newUser.save()
-        .then(customer =>{
-            res.statusCode = 200;
-            render("sigin", {message: "Registration Successful!"});
-        }, err  => next(err))
-    }, err => next(err))
-    .catch(err => {
-        render("rigisterAdmin", {error: err});
-    })
-}
 
 
 
@@ -70,84 +36,192 @@ exports.singup = async(req, res, next)=>{
 
 
 
-exports.dashboard = (req, res, next)=>{
-    res.render("dashboard")
+exports.dashboard =async (req, res, next)=>{
+    async.parallel({
+        ourUser : function(callback){
+            User.findById(req.user._id).exec(callback)
+        },
+        ourPackage: function(callback){
+            Courier.find({admin: req.user._id}).exec(callback)
+        }
+    },(err, result)=>{
+        if(err){
+            next(err)
+        }else{
+            res.render("dashboard", {user: result.ourUser, package: result.ourPackage})
+        }
+    })
+    
 }
 
 
 exports.get_addCourier = (req, res, next)=>{
-    res.render("addCourier");
+    try{
+        User.findById(req.user._id, (err, user)=>{
+            if(err){
+                next(err);
+                return;
+            }
+            res.render("addCourier", {user: user})
+        })
+    }
+    catch(err){
+        next(err)
+    }
 }
 
 exports.packageDetail = (req, res, next)=>{
-    res.render("packageDetails");
-}
-
-exports.addCourier = (req, res, next)=>{
-
-}
-
-
-
-exports.signin = async (req, res, next)=>{
-    //if signup username and password fail validation
-    const {error} = await validation.validateLogin(req.body);
-    if(error){
-        var err = new Error(error.details[0].message);
-        err.status = 404;
-        return next(err);
-    }
-
-    User.findOne({username: req.body.username})
-    .then(user =>{
-        if(!user){
-            var err = new Error("Username or password incorrect!");
-            err.status = 404;
-            res.render("signin", {error: err})
+    async.parallel({
+        ourUser : function(callback){
+            User.findById(req.user._id).exec(callback)
+        },
+        ourPackage: function(callback){
+            Courier.findById(req.params.id).exec(callback)
         }
-
-        var passwordCorrect = bcrypt.compare(req.body.password, user.password);
-        //If passwords does not match
-        if(!passwordCorrect){
-            var err = new Error("Username or password incorrect!");
-            err.status = 404;
-            res.render("signin", {error: err})
+    },(err, result)=>{
+        if(err){
+            next(err)
+        }else{
+            res.render("packageDetails", {user: result.ourUser, package: result.ourPackage})
         }
-        
-        res.statusCode = 200;
-        const token = jwt.sign(results.user.toJSON(), process.env.TOKEN_SECRET, {  expiresIn: '59m' });
-            res.cookie('auth', token);
-            res.redirect("/dashboard")
     })
 }
+
+exports.addCourier = async (req, res, next)=>{
+    if(req.file){
+        let file = req.file;
+
+        //This removes the public from the file path, so we will have only "/uploads/users/*.jpg|png|gif"
+        let Imgurl = file.path.replace("public", "");
+
+        var courier = new Courier({
+            admin : req.user._id,
+
+            sender_fullname: req.body.sender_fullname,
+            sender_email: req.body.sender_email,
+            sender_phone: req.body.sender_phone,
+            sender_address: req.body.sender_address,
+            sender_country: req.body.sender_country,
+            sender_state: req.body.sender_state,
+            sender_zip_code: req.body.sender_zip_code,
+            secret_question: req.body.secret_question,
+        
+            receiver_fullname: req.body.receiver_fullname,
+            receiver_email: req.body.receiver_email,
+            receiver_phone: req.body.receiver_phone,
+            receiver_address: req.body.receiver_address,
+            receiver_country: req.body.receiver_country,
+            receiver_state: req.body.receiver_state,
+            receiver_zip_code: req.body.receiver_zip_code,
+            secret_answer: req.body.secret_answer,
+        
+            package_description: req.body.package_description,
+            package_type: req.body.package_type,
+            duration: req.body.duration,
+            time_initiated: req.body.time_initiated,
+            image: Imgurl
+        })
+
+        try{
+            courier.save((err, user)=>{
+                if(err){
+                    next(err)
+                }
+                else{
+                    res.redirect("dashboard")
+                }
+            })
+        }
+
+        catch(err){
+            next(err)
+        }
+    }
+
+    else{
+        var courier = new Courier({
+            admin : req.user._id,
+
+            sender_fullname: req.body.sender_fullname,
+            sender_email: req.body.sender_email,
+            sender_phone: req.body.sender_phone,
+            sender_address: req.body.sender_address,
+            sender_country: req.body.sender_country,
+            sender_state: req.body.sender_state,
+            sender_zip_code: req.body.sender_zip_code,
+            secret_question: req.body.secret_question,
+        
+            receiver_fullname: req.body.receiver_fullname,
+            receiver_email: req.body.receiver_email,
+            receiver_phone: req.body.receiver_phone,
+            receiver_address: req.body.receiver_address,
+            receiver_country: req.body.receiver_country,
+            receiver_state: req.body.receiver_state,
+            receiver_zip_code: req.body.receiver_zip_code,
+            secret_answer: req.body.secret_answer,
+        
+            package_description: req.body.package_description,
+            package_type: req.body.package_type,
+            duration: req.body.duration,
+            time_initiated: req.body.time_initiated
+        })
+
+        try{
+            courier.save((err, user)=>{
+                if(err){
+                    next(err)
+                }
+                else{
+                    res.redirect("dashboard")
+                }
+            })
+        }
+
+        catch(err){
+            next(err)
+        }
+    }
+    
+}
+
+
+exports.deletePackage = async (req, res, next)=>{
+    try{
+        Courier.findByIdAndRemove(req.params.id, (err, courier)=>{
+            if(err){
+                next(err)
+                return
+            }
+            res.redirect("/dashboard")
+        })
+    }
+    catch(error){
+        next(error)
+    }
+}
+
+exports.updatePackage = async (req, res, next)=>{
+    try{
+        Courier.findByIdAndUpdate({_id: req.params.id},req.body, {new: true}, (err, courier) =>{
+            if(err){
+                next(err)
+                return;
+            }else{
+                res.redirect("/package-details/"+req.params.id);
+            }
+        })
+    }
+    catch(error){
+        next(error)
+    }
+}
+
 
 /**
  *      FOR /users/logout
  */
 exports.logout = (req, res, next)=>{
-    var authHeader = req.headers.authorization;
-    if(!authHeader){
-        res.statusCode = 403;
-        var err = new Error("You are not logged in!");
-        return next(err)
-    }
-    req.headers.authorization.split(" ")[1] = ""
-    res.statusCode = 200;
-    res.setHeader("Cotent-Type", "application/json");
-    res.json({"message": "Logout successful!"})
+    res.cookie('auth', "");
+    res.render("signin", {message: "Logout Successful!!!"})
 }
 
-
-/**
- *      FOR /foods/my_orders
- */
-exports.getMyOrders = (req, res, next)=>{
-    Order.find({"user": req.user._id})
-    .populate("food")
-    .then(order =>{
-            res.statusCode = 200;
-            res.setHeader("Conten-Type", "application/json");
-            res.json({order})
-    }, err => next(err))
-    .catch(err => next(err))
-}
