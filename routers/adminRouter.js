@@ -3,7 +3,7 @@ const adminRouter = express.Router();
 const adminController = require("../controllers/adminController");
 const verification = require("../validation/validateToken");
 
-adminRouter.get("/admin/register", verification.verifyUser, verification.verifyAdmin, adminController.registerAdmin);
+adminRouter.get("/admin/register", adminController.registerAdmin);
 
 adminRouter.get("/admin/login", adminController.get_signin);
 
