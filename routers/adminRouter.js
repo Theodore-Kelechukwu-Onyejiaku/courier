@@ -11,7 +11,7 @@ adminRouter.get("/logout", adminController.logout)
 
 adminRouter.post("/admin/login",  adminController.signin);
 
-adminRouter.post("/admin/register", verification.verifyUser, verification.verifyAdmin, adminController.signup);
+adminRouter.post("/admin/register", adminController.signup);
 
 
 module.exports = adminRouter;
