@@ -40,7 +40,7 @@ app.use("/api", adminRoutes)
 
 
 
-var mongoDB = process.env.DB_ONLINE;
+var mongoDB = process.env.DB_LOCAL;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongoose.connections;
 db.concat("error", console.error.bind(console, "MongoDB connection error."));

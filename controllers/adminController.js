@@ -24,7 +24,7 @@ exports.logout = (req, res, next) =>{
 
 exports.signin = async (req, res, next)=>{
     User.findOne({email: req.body.email})
-    .then(user =>{
+    .then( async (user) =>{
         if(!user){
             var err = new Error("Username or password incorrect!");
             err.status = 404;
@@ -32,7 +32,8 @@ exports.signin = async (req, res, next)=>{
             return;
         }
 
-        var passwordCorrect = bcrypt.compare(req.body.password, user.password);
+        var passwordCorrect = await bcrypt.compare(req.body.password, user.password);
+        console.log(passwordCorrect)
         //If passwords does not match
         if(!passwordCorrect){
             var err = new Error("Username or password incorrect!");
