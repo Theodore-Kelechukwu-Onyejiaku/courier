@@ -227,12 +227,13 @@ exports.logout = (req, res, next)=>{
 
 
 exports.tracker = async (req, res, next) =>{
-    console.log(req.query)
+    
     try{
         Courier.findById(req.query.id, (err, package)=>{
             if(err){
                 var package = null;
                 res.render("delivered", {err: err, package: package})
+                return;
             }
             res.render("delivered", {package: package})
         })
