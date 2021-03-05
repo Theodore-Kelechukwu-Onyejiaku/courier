@@ -352,6 +352,14 @@
           background: #5cb85c;
           color: white;
         }
+
+        .multi_step_form #msform #progressbar li.danger {
+          color: red;
+        }
+        .multi_step_form #msform #progressbar li.danger:before, .multi_step_form #msform #progressbar li.danger:after {
+          background:red;
+          color: white;
+        }
         .multi_step_form #msform .action-button {
           background: #5cb85c;
           color: white;
@@ -599,21 +607,26 @@
                               </div>
                           <!-- progressbar -->
                           <ul id="progressbar" style="margin-top: 4%;">
-                            <li><h4>Package Picked Up</h4></li>
-                            <% if(package.package_status == "Delivered and Received"){ %>
-                              <li class="active">
+                            <li class="active">
+                              <h4>Package Picked Up</h4>
+                            </li>
+                            
+                            <% if(package.delivery_status !== "Delivered"){ %>
+                              <li class="checking">
                                 <h4><%= package.package_status %></h4>
                               </li> 
                             <% }else{ %>
-                              <li class="checking">
+                              <li class="active">
                                 <h4><%= package.package_status %></h4>
                               </li> 
                             <% } %>
                             
                             <% if(package.delivery_status ==  "Delivered"){ %>
                               <li class="active" ><h4><%= package.delivery_status %></h4></li>
-                            <% }else{ %>
-                            <li  ><h4><%= package.delivery_status %></h4></li>
+                            <% }else if(package.delivery_status ==  "Pending"){ %>
+                            <li ><h4><%= package.delivery_status %></h4></li>
+                            <% } else {%>
+                              <li class="danger"><h4><%= package.delivery_status %></h4></li>
                             <% } %>
                           </ul>
                           <!-- fieldsets -->
